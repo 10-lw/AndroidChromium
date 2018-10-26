@@ -5,6 +5,7 @@
 package org.chromium.chrome.browser.document;
 
 import android.annotation.TargetApi;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.text.TextUtils;
@@ -66,6 +67,7 @@ public class DocumentActivity extends ChromeActivity {
     /**
      * Determines whether the given class can be classified as a DocumentActivity (this includes
      * both regular document activity and incognito document activity).
+     *
      * @param className The class name to inspect.
      * @return Whether the className is that of a document activity.
      */

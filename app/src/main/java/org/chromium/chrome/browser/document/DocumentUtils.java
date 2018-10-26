@@ -35,7 +35,8 @@ public class DocumentUtils {
     /**
      * Finishes tasks other than the one with the given ID that were started with the given data
      * in the Intent, removing those tasks from Recents and leaving a unique task with the data.
-     * @param data Passed in as part of the Intent's data when starting the Activity.
+     *
+     * @param data            Passed in as part of the Intent's data when starting the Activity.
      * @param canonicalTaskId ID of the task will be the only one left with the ID.
      * @return Intent of one of the tasks that were finished.
      */
@@ -76,6 +77,7 @@ public class DocumentUtils {
 
     /**
      * Returns the RecentTaskInfo for the task, if the ActivityManager succeeds in finding the task.
+     *
      * @param task AppTask containing information about a task.
      * @return The RecentTaskInfo associated with the task, or null if it couldn't be found.
      */
@@ -91,6 +93,7 @@ public class DocumentUtils {
 
     /**
      * Returns the baseIntent of the RecentTaskInfo associated with the given task.
+     *
      * @param task Task to get the baseIntent for.
      * @return The baseIntent, or null if it couldn't be retrieved.
      */
@@ -101,8 +104,9 @@ public class DocumentUtils {
 
     /**
      * Given an AppTask retrieves the task class name.
+     *
      * @param task The app task to use.
-     * @param pm The package manager to use for resolving intent.
+     * @param pm   The package manager to use for resolving intent.
      * @return Fully qualified class name or null if we were not able to
      * determine it.
      */
@@ -124,6 +128,7 @@ public class DocumentUtils {
 
     /**
      * Returns the ID of the last shown Tab for the given DocumentTabModel type.
+     *
      * @param context     Context to pull SharedPrefs from.
      * @param isIncognito Whether to get the ID for the regular or Incognito TabModel.
      * @return ID of the last shown Tab for the given TabModel type.

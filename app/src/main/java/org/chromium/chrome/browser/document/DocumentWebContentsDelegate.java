@@ -35,6 +35,7 @@ public class DocumentWebContentsDelegate extends WebContentsDelegateAndroid {
 
     /**
      * Attaches the native side delegate to the native WebContents.
+     *
      * @param webContents The {@link WebContents} to attach to.
      */
     public void attachDelegate(WebContents webContents) {
@@ -46,6 +47,7 @@ public class DocumentWebContentsDelegate extends WebContentsDelegateAndroid {
     }
 
     private native long nativeInitialize();
+
     private native void nativeAttachContents(
             long nativeDocumentWebContentsDelegate, WebContents webContents);
 }
