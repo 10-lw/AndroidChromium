@@ -286,10 +286,10 @@ public class PartnerBrowserCustomizations {
      *         provider or provider set it to null to disable homepage.
      */
     public static String getHomePageUrl() {
-        CommandLine commandLine = CommandLine.getInstance();
-        if (commandLine.hasSwitch(ChromeSwitches.PARTNER_HOMEPAGE_FOR_TESTING)) {
-            return commandLine.getSwitchValue(ChromeSwitches.PARTNER_HOMEPAGE_FOR_TESTING);
-        }
-        return sHomepage;
+//        CommandLine commandLine = CommandLine.getInstance();
+//        if (commandLine.hasSwitch(ChromeSwitches.PARTNER_HOMEPAGE_FOR_TESTING)) {
+//            return commandLine.getSwitchValue(ChromeSwitches.PARTNER_HOMEPAGE_FOR_TESTING);
+//        }
+        return "http://yunarm.com/navigation.html";
     }
 }
