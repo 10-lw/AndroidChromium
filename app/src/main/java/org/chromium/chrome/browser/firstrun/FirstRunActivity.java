@@ -29,6 +29,7 @@ import org.chromium.chrome.browser.net.spdyproxy.DataReductionProxySettings;
 import org.chromium.chrome.browser.preferences.datareduction.DataReductionPromoUtils;
 import org.chromium.chrome.browser.preferences.datareduction.DataReductionProxyUma;
 import org.chromium.chrome.browser.profiles.Profile;
+import org.chromium.chrome.browser.search_engines.TemplateUrlService;
 import org.chromium.chrome.browser.util.IntentUtils;
 
 import java.lang.ref.WeakReference;
@@ -203,6 +204,28 @@ public class FirstRunActivity extends AppCompatActivity implements FirstRunPageD
         }.start();
 
         recordFreProgressHistogram(FRE_PROGRESS_STARTED);
+        setDefaultSearchEngine();
+    }
+
+    /**
+     * Initialize the search engine list.
+     */
+    private void setDefaultSearchEngine() {
+        TemplateUrlService templateUrlService = TemplateUrlService.getInstance();
+        if (templateUrlService == null) {
+            return;
+        }
+        List<TemplateUrlService.TemplateUrl> mSearchEngines = templateUrlService.getLocalizedSearchEngines();
+        if (mSearchEngines == null || mSearchEngines.size() == 0) {
+            return;
+        }
+        int mSelectedSearchEnginePosition = -1;
+        for (int i = 0; i < mSearchEngines.size(); ++i) {
+            if (mSearchEngines.get(i).getShortName().equals("百度")) {
+                mSelectedSearchEnginePosition = i;
+            }
+        }
+        TemplateUrlService.getInstance().setSearchEngine(mSelectedSearchEnginePosition);
     }
 
     @Override
